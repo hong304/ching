@@ -1,0 +1,40 @@
+{
+  "private": true,
+  "scripts": {
+    "prod": "gulp --production",
+    "dev": "gulp watch",
+    "cache": "composer dumpautoload && composer clear-cache && php artisan optimize && php artisan cache:clear && php artisan route:clear && php artisan view:clear && php artisan config:clear",
+    "init": "npm install && composer install && npm rebuild node-sass && cp .env.example .env && php artisan key:generate && php artisan storage:link && php artisan migrate && php artisan db:seed && mkdir -p public/build && cp -r node_modules/flag-icon-css/flags/ public/build/flags && gulp watch",
+    "emails": "php artisan queue:work database --queue=emails"
+  },
+  "devDependencies": {
+    "bootstrap": "4.0.0-alpha.6",
+    "gulp": "^3.9.1",
+    "jquery": "^3.1.0",
+    "laravel-elixir": "^6.0.0-14",
+    "laravel-elixir-vue-2": "^0.2.0",
+    "laravel-elixir-webpack-official": "^1.0.2",
+    "lodash": "^4.16.2",
+    "tether": "^1.4.0",
+    "vue": "^2.0.1",
+    "vue-pagination-2": "^0.2.6",
+    "vue-resource": "^1.0.3",
+    "vue-tables-2": "^0.4.33"
+  },
+  "dependencies": {
+    "chart.js": "^2.7.2",
+    "croppie": "^2.4.0",
+    "flag-icon-css": "^2.8.0",
+    "jquery-bridget": "^2.0.1",
+    "jquery.ns-autogrow": "^1.1.6",
+    "js-cookie": "^2.1.4",
+    "masonry-layout": "^4.1.1",
+    "owl.carousel": "^2.2.0",
+    "select2": "^4.0.3",
+    "sortablejs": "^1.6.0",
+    "video.js": "^5.18",
+    "videojs-contrib-hls": "^5.3.3",
+    "vue-router": "^2.2.1",
+    "vue-tables-2": "^0.4.33"
+  }
+}

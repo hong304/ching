@@ -1,0 +1,127 @@
+/* ------------------------------------------------ */
+/* --------------- 2. default style --------------- */
+/* ------------------------------------------------ */
+html, body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: white;
+}
+
+// hide the scrollbar for better UX,
+// take this out if the scroll bar need to visible
+::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  -ms-overflow-style: auto;
+}
+
+body {
+  overflow-x: hidden;
+  position: relative;
+  &.menu-open {
+    overflow: hidden;
+  }
+  &.full-height {
+    height: 100%;
+    min-height: 100vh;
+  }
+}
+
+.loading-overlay {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: white;
+  z-index: 9999;
+}
+
+.standard-padding {
+  padding-left: 15px;
+  padding-right: 15px;
+  @media screen and (max-width: 767px) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.container {
+  @media (min-width: $superbig-screen) {
+    width: 1440px;
+  }
+  @media (max-width: 991px) {
+    width: 100%;
+  }
+  @media (max-width: 767px) {
+    width: 100%;
+  }
+  @media (max-width: 467px) {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+@media (min-width: 1490px) {
+  .col-sb-5boxs {
+    width: 20%;
+  }
+}
+
+// reset all the style of default button and href
+button {
+  border: none;
+}
+button, a {
+  &:focus, &:hover {
+    cursor: pointer;
+    outline: none;
+  }
+}
+input {
+  &:focus, &:hover {
+    cursor: text;
+    outline: none;
+  }
+  &[type='file'] {
+    cursor: pointer;
+  }
+}
+
+.alert {
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 0;
+  }
+}
+
+.form-control {
+  line-height: 1.85rem;
+}
+
+.clear-float {
+  clear: both;
+}
+
+a {
+  color: $maintheme-color;
+  &:focus, &:hover {
+    text-decoration: none;
+    color: darken($maintheme-color, 10%);
+  }
+}
+
+// overwriting the bootstrap default style of these two class to fix the problem of the menu showing in less than 767px
+.navbar-toggleable {
+  @media screen and (max-width: 767px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .navbar-nav {
+    @media screen and (max-width: 767px) {
+      flex-direction: column;
+    }
+  }
+}
